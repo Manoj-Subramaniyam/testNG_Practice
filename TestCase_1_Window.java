@@ -16,7 +16,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 public class TestCase_1_Window extends ProjectSpecificClass{
 	
-	@Test
+	@Test(invocationCount=2, timeOut = 20000)
 	public void windowHandles() throws InterruptedException {
 		
 		driver.findElement(By.xpath("//span[text()='Browser']/ancestor::a")).click();
