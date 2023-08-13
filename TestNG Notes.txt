@@ -1,4 +1,4 @@
-TestNG
+TestNG- in Java file
 
 @BeforeSuite
 @BeforeTest
@@ -9,3 +9,31 @@ TestNG
 @AfterClass
 @AfterTest
 @AfterSuite
+
+----------------------------
+in XML
+
+Right click on the selected Classes --> convert to TestNG
+<suite name="">
+<test thread-count="2" parallel="classes">
+<classes>
+<class name="packagename.class">
+</classes>
+
+</test>
+</suite>
+--------------------------------
+attributes
+
+@Test Attributes
+
+@Test(invocationCount=2) --> default value is 1
+	Execute the Test two times, difference between the for loop and invocationCount is for loop will not execute second time when the first loop fails but invocationCount will execute the second time
+
+@Test(timeOut=7000) 
+	Maximum allowed time to Execute the one testcase
+	Exception--> ThreadTimeoutException
+@Test(invocationTimeOut=14000)
+	Total allowed time to complete the Testcases
+
+	
