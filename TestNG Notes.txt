@@ -36,4 +36,11 @@ attributes
 @Test(invocationTimeOut=14000)
 	Total allowed time to complete the Testcases
 
+@Test(priority=1) -->Default value is 0
+	if the priority is negative then that will execute first
+	can be accesed within the class
+@Test(dependsOnMethods="packagename.className.MethodName")
+	if the first method excutes then it will get Executed
+	will skip if the previous method is failed
+	can be accessed across the classes
 	
