@@ -43,4 +43,11 @@ attributes
 	if the first method excutes then it will get Executed
 	will skip if the previous method is failed
 	can be accessed across the classes
-	
+@Test(dependsOnMethods="packagename.className.MethodName", alwaysRun=true) alwaysRun --> default value is false
+	If you wnt to run a method eventhought the other methods fails then we can used alwaysRun
+@Test(enabled=true) -> default value is true
+	It will execute the Testcase if false means it will not execute
+	difference between alwaysRun and enabled is enabled will given top priority but
+		 if you have enabled=true and dependsOnMethods in same method and the first method is failed then the second method will not execute,
+		 if enabled=true, alwaysRun=true,dependsOnMethods then it will execute the second method
+		if enabled=false, alwaysRun=true,dependsOnMethods then it will not execute the second method
