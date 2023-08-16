@@ -12,7 +12,7 @@ public class ReadExcel {
 	@Test
 	public void getReadExcel() throws IOException
 	{
-		XSSFWorkbook book= new XSSFWorkbook("C:/Users/manoj.subramaniyam/Downloads/testdata.xlsx");
+		XSSFWorkbook book= new XSSFWorkbook("path");
 		XSSFSheet sheet= book.getSheetAt(0);
 		int row=sheet.getLastRowNum();
 		short columnCount=sheet.getRow(0).getLastCellNum();
@@ -32,7 +32,7 @@ public class ReadExcel {
 				System.out.println(column.getNumericCellValue());
 			}
 		}
-		
+		book.close();
 		
 	}
 }
