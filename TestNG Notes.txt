@@ -51,3 +51,8 @@ attributes
 		 if you have enabled=true and dependsOnMethods in same method and the first method is failed then the second method will not execute,
 		 if enabled=true, alwaysRun=true,dependsOnMethods then it will execute the second method
 		if enabled=false, alwaysRun=true,dependsOnMethods then it will not execute the second method
+@ignore
+@Test -->  this will ignore particular method , this can be initialixed on class level
+	Difference betwwen enabled=true and @ignore is enabled is declared on method level but @ignore can be declared on class level
+
+
