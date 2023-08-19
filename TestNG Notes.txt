@@ -55,4 +55,6 @@ attributes
 @Test -->  this will ignore particular method , this can be initialixed on class level
 	Difference betwwen enabled=true and @ignore is enabled is declared on method level but @ignore can be declared on class level
 
-
+@Test(invocationCount=2 , threadpoolSize=2)
+	This will execute a @Test methode parallely
+	Difference between thread-count and threadPoolSize. thread- count s applicable for particular Test, whereas threadPoolsize will be used only on invocationcount
