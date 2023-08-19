@@ -45,6 +45,8 @@ attributes
 	can be accessed across the classes
 @Test(dependsOnMethods="packagename.className.MethodName", alwaysRun=true) alwaysRun --> default value is false
 	If you wnt to run a method eventhought the other methods fails then we can used alwaysRun
+	if you run multiple classes in in TestNG xml in that 1 class is dependes on other class and then remaining two are independent then no dependent cases will execute first, it will not follow the declared order in cxml
+	E.g: class1(dependsONMethods class2), classs2,class3, class4 then class2 and 3 will execute first then class 4 and class1 will execute
 @Test(enabled=true) -> default value is true
 	It will execute the Testcase if false means it will not execute
 	difference between alwaysRun and enabled is enabled will given top priority but
@@ -58,3 +60,9 @@ attributes
 @Test(invocationCount=2 , threadpoolSize=2)
 	This will execute a @Test methode parallely
 	Difference between thread-count and threadPoolSize. thread- count s applicable for particular Test, whereas threadPoolsize will be used only on invocationcount
+
+in XML: verbose= 10 --> default value is 2
+
+<suite name="Test" verbose= "10">
+
+	Verbose is used to get more logs if it is 1 then less logs and if it is 10 then more logs
