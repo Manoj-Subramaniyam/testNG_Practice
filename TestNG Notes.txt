@@ -58,8 +58,19 @@ attributes
 	Difference betwwen enabled=true and @ignore is enabled is declared on method level but @ignore can be declared on class level
 
 @Test(invocationCount=2 , threadpoolSize=2)
-	This will execute a @Test methode parallely
+	This will execute a @Test method parallely
 	Difference between thread-count and threadPoolSize. thread- count s applicable for particular Test, whereas threadPoolsize will be used only on invocationcount
+
+@Test(groups="regression")
+@BeforeMethod(groups="regression")
+@AfterMethod(groups="regression")
+	groups is used run specific testcase with the help of xml
+   xml format
+	<groups>
+	<run>
+	<include name="Regression"></include>
+	</run>
+	</groups>
 
 in XML: verbose= 10 --> default value is 2
 
