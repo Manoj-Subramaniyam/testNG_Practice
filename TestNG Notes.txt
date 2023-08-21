@@ -62,7 +62,7 @@ attributes
 	Difference between thread-count and threadPoolSize. thread- count s applicable for particular Test, whereas threadPoolsize will be used only on invocationcount
 
 @Test(groups="regression")
-@BeforeMethod(groups="regression")
+@BeforeMethod(groups={"regression","sanity"})
 @AfterMethod(groups="regression")
 	groups is used run specific testcase with the help of xml
    xml format
@@ -71,7 +71,19 @@ attributes
 	<include name="Regression"></include>
 	</run>
 	</groups>
-
+<groups>
+	<run>
+	<exclude name="Regression"></exclude>
+	</run>
+	</groups>
+if you want to run both sanity and smoke 
+	<groups>
+	<run>
+	<include name="s.*"></include>
+	</run>
+	</groups>
+if you want to run the smoke first before sanity, then we need to use dependsOnGroups
+	E.g: @Test(groups="sanity", dependsOnGroups="smoke")
 in XML: verbose= 10 --> default value is 2
 
 <suite name="Test" verbose= "10">
