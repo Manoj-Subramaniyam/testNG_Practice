@@ -89,3 +89,16 @@ in XML: verbose= 10 --> default value is 2
 <suite name="Test" verbose= "10">
 
 	Verbose is used to get more logs if it is 1 then less logs and if it is 10 then more logs
+
+
+Parameterization:
+
+Static parameter
+Dynamic parameter
+
+static parameter:
+	Used to pass the value from XML
+	<suite name="">
+	<parameter name="" value=""></Parameter>
+	<parameter name="" value=""></Parameter>
+	<test>
