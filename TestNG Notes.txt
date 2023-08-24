@@ -139,3 +139,15 @@ public class Retry implements IAnnotationTransformer{
 	return false;
 	}
 	@Test(retryAnalyzer=Retry.class)
+
+IAnnotationTransformer and IRetryAnalyzer
+
+Public class Transformer implements IAnootationTransformer{
+	public void transformer(ITestAnnotation annotation,class testclass,Constructor testConstructor, Method testMethod){
+	annotation.setRetryAnalyzer(Retry.class)
+	}
+	}
+in XML
+	<listeners>
+	<listener class-name="packagename.classname"><listener>
+	<listeners>
