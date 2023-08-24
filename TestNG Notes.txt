@@ -108,7 +108,7 @@ static parameter:
 		methodname(String url,String id)
 		{}
 Dynamic parameter(Data Provider):
-	@DataProvider(name="testdata")
+	@DataProvider(name="testdata", indices={0,2}, parallel=true)
 	public Object[][] testData()
 	{
 		String[][] data = new String[2][3];
@@ -119,4 +119,23 @@ Dynamic parameter(Data Provider):
 		data[1][2]="row22";
 		data[1][3]="row23";
 		return data;
-	}	
+	}
+	
+	@Test(dataProvider="testdata")
+
+------------
+
+
+IRetryAnalyzer
+public class Retry implements IAnnotationTransformer{
+	int maxRetry=2, iTries=0;
+       public boolean retry(IRetryAnalyzer result)
+	
+	if(iTries<maxRetry)
+	{
+		iTries++;
+		return true;
+	}
+	return false;
+	}
+	@Test(retryAnalyzer=Retry.class)
